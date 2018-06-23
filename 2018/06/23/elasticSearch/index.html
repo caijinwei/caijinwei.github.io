@@ -79,13 +79,16 @@
 
 
 
+<meta name="description" content="1.1 在ES中索引包含两层意思：索引（名词）如上文所述，一个索引(index)就像是传统关系数据库中的数据库，它是相关文档存储的地方，index的复数是indices 或indexes。 索引（动词）「索引一个文档」表示把一个文档存储到索引（名词）里，以便它可以被检索或者查询。这很像SQL中的 INSERT  关键字，差别是，如果文档已经存在，新的文档将覆盖旧的文档。 倒排索引传统数据库为特定列">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello world myblog">
-<meta property="og:url" content="http://yoursite.com/2018/01/06/hello-world-myblog/index.html">
+<meta property="og:title" content="elasticSearch">
+<meta property="og:url" content="http://yoursite.com/2018/06/23/elasticSearch/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2018-01-06T07:46:22.845Z">
+<meta property="og:description" content="1.1 在ES中索引包含两层意思：索引（名词）如上文所述，一个索引(index)就像是传统关系数据库中的数据库，它是相关文档存储的地方，index的复数是indices 或indexes。 索引（动词）「索引一个文档」表示把一个文档存储到索引（名词）里，以便它可以被检索或者查询。这很像SQL中的 INSERT  关键字，差别是，如果文档已经存在，新的文档将覆盖旧的文档。 倒排索引传统数据库为特定列">
+<meta property="og:updated_time" content="2018-06-23T11:47:59.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello world myblog">
+<meta name="twitter:title" content="elasticSearch">
+<meta name="twitter:description" content="1.1 在ES中索引包含两层意思：索引（名词）如上文所述，一个索引(index)就像是传统关系数据库中的数据库，它是相关文档存储的地方，index的复数是indices 或indexes。 索引（动词）「索引一个文档」表示把一个文档存储到索引（名词）里，以便它可以被检索或者查询。这很像SQL中的 INSERT  关键字，差别是，如果文档已经存在，新的文档将覆盖旧的文档。 倒排索引传统数据库为特定列">
 
 
 
@@ -115,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/06/hello-world-myblog/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/23/elasticSearch/"/>
 
 
 
 
 
-  <title>hello world myblog | Hexo</title>
+  <title>elasticSearch | Hexo</title>
   
 
 
@@ -278,7 +281,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/06/hello-world-myblog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/23/elasticSearch/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -295,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hello world myblog</h1>
+          <h1 class="post-title" itemprop="name headline">elasticSearch</h1>
         
 
         <div class="post-meta">
@@ -307,8 +310,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-06T15:46:22+08:00">
-                2018-01-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-23T19:29:28+08:00">
+                2018-06-23
               </time>
             
 
@@ -345,7 +348,13 @@
       
 
       
-        
+        <h2 id="1-1-在ES中索引包含两层意思："><a href="#1-1-在ES中索引包含两层意思：" class="headerlink" title="1.1 在ES中索引包含两层意思："></a>1.1 在ES中索引包含两层意思：</h2><h5 id="索引（名词）"><a href="#索引（名词）" class="headerlink" title="索引（名词）"></a>索引（名词）</h5><p>如上文所述，一个索引(index)就像是传统关系数据库中的数据库，它是相关文档存储的地方，index的复数<br>是indices 或indexes。</p>
+<h5 id="索引（动词）"><a href="#索引（动词）" class="headerlink" title="索引（动词）"></a>索引（动词）</h5><p>「索引一个文档」表示把一个文档存储到索引（名词）里，以便它可以被检索或者查询。这很像SQL中<br>的 INSERT  关键字，差别是，如果文档已经存在，新的文档将覆盖旧的文档。</p>
+<h4 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h4><p>传统数据库为特定列增加一个索引，例如B-Tree索引来加速检索。Elasticsearch和Lucene使用一种叫做倒排索引<br>(inverted index)的数据结构来达到相同目的</p>
+<h2 id="1-2-下面是常用的将ES一些概念和数据库进行对比图："><a href="#1-2-下面是常用的将ES一些概念和数据库进行对比图：" class="headerlink" title="1.2 下面是常用的将ES一些概念和数据库进行对比图："></a>1.2 下面是常用的将ES一些概念和数据库进行对比图：</h2><p>Relational DB -&gt; Databases -&gt; Tables -&gt; Rows -&gt; Columns</p>
+<p>Elasticsearch -&gt; Indices -&gt; Types -&gt; Documents -&gt; Fields</p>
+<p>1.3 ES中可以有多个索引（index）（数据库），每个索引可以包含多个类型(type)（表），每个类型可以包含多个文档（document）行，然后每个文档可以包含多个字段（Field）（列）</p>
+
       
     </div>
     
@@ -369,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/05/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/01/06/hello-world-myblog/" rel="next" title="hello world myblog">
+                <i class="fa fa-chevron-left"></i> hello world myblog
               </a>
             
           </div>
@@ -378,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/23/elasticSearch/" rel="prev" title="elasticSearch">
-                elasticSearch <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -433,8 +438,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -480,6 +494,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-在ES中索引包含两层意思："><span class="nav-number">1.</span> <span class="nav-text">1.1 在ES中索引包含两层意思：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#索引（名词）"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">索引（名词）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#索引（动词）"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">索引（动词）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#倒排索引"><span class="nav-number">1.0.1.</span> <span class="nav-text">倒排索引</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-下面是常用的将ES一些概念和数据库进行对比图："><span class="nav-number">2.</span> <span class="nav-text">1.2 下面是常用的将ES一些概念和数据库进行对比图：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
