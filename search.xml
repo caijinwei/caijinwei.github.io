@@ -5,7 +5,7 @@
     <url>%2F2018%2F06%2F23%2FmonogDB%E6%9F%A5%E8%AF%A2%2F</url>
     <content type="text"><![CDATA[MongoDB 查询文档使用 find() 方法。find() 方法以非结构化的方式来显示所有文档。 语法1db.collection.find(query,projection) query: 可选，使用查询操作符制定查询条件 projection: 可选,使用投影操作符指定返回的键。返回所有就直接省略该参数即可。 pretty() 方法以格式化的方式来显示所有文档。1db.col.find().pretty() 实例1234567891011121314&gt; db.col.find().pretty()&#123; &quot;_id&quot; : ObjectId(&quot;56063f17ade2f21f36b03133&quot;), &quot;title&quot; : &quot;MongoDB 教程&quot;, &quot;description&quot; : &quot;MongoDB 是一个 Nosql 数据库&quot;, &quot;by&quot; : &quot;菜鸟教程&quot;, &quot;url&quot; : &quot;http://www.runoob.com&quot;, &quot;tags&quot; : [ &quot;mongodb&quot;, &quot;database&quot;, &quot;NoSQL&quot; ], &quot;likes&quot; : 100&#125; MongoDB 与 RDBMS Where 语句比较 操作 格式 范例 RDBMS中的类似语句 等于 {:} db.col.find({“by”:”教程”}).pretty() where by = ‘教程’ 少于 {:{$lt:}} db.col.find({“likes”:{$lt:50}}).pretty() where lickes &lt;50 小于或者等于 {:{$lte:50}}.pretty() db.col.find({“likes”:{$lte:50}}).pretty() where lickes &lt;=50 大于 {:{$gt:50}} {likes:{$gt:50}} where lickes &gt;50 不等于 {:{$ne:}} {likes:{$ne:50}} where likes != 50 AND条件MongoDB 的 find()方法可以传入多个键(key)，每个键(key)以逗号隔开，即常规 SQL 的 AND 条件。1db.col.find(&#123;key1:value1,key2:value2&#125;).pretty() or条件MongoDB OR 条件语句使用了关键字 $or,语法格式如下：1234567db.col.find( &#123; $or:[ &#123;key1:value1&#125;,&#123;key2:value2&#125; ] &#125;)]]></content>
       <categories>
-        <category>前端</category>
+        <category>前端1</category>
       </categories>
       <tags>
         <tag>前端</tag>
@@ -17,7 +17,7 @@
     <url>%2F2018%2F06%2F23%2FelasticSearch%2F</url>
     <content type="text"><![CDATA[1.1 在ES中索引包含两层意思：索引（名词）如上文所述，一个索引(index)就像是传统关系数据库中的数据库，它是相关文档存储的地方，index的复数是indices 或indexes。 索引（动词）「索引一个文档」表示把一个文档存储到索引（名词）里，以便它可以被检索或者查询。这很像SQL中的 INSERT 关键字，差别是，如果文档已经存在，新的文档将覆盖旧的文档。 倒排索引传统数据库为特定列增加一个索引，例如B-Tree索引来加速检索。Elasticsearch和Lucene使用一种叫做倒排索引(inverted index)的数据结构来达到相同目的 1.2 下面是常用的将ES一些概念和数据库进行对比图：Relational DB -&gt; Databases -&gt; Tables -&gt; Rows -&gt; Columns Elasticsearch -&gt; Indices -&gt; Types -&gt; Documents -&gt; Fields 1.3 ES中可以有多个索引（index）（数据库），每个索引可以包含多个类型(type)（表），每个类型可以包含多个文档（document）行，然后每个文档可以包含多个字段（Field）（列）]]></content>
       <categories>
-        <category>前端</category>
+        <category>前端1</category>
       </categories>
       <tags>
         <tag>前端</tag>
