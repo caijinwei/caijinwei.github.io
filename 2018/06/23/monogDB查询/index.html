@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
 
@@ -81,16 +83,16 @@
 
 
 
-<meta name="description" content="1.1 在ES中索引包含两层意思：索引（名词）如上文所述，一个索引(index)就像是传统关系数据库中的数据库，它是相关文档存储的地方，index的复数是indices 或indexes。 索引（动词）「索引一个文档」表示把一个文档存储到索引（名词）里，以便它可以被检索或者查询。这很像SQL中的 INSERT  关键字，差别是，如果文档已经存在，新的文档将覆盖旧的文档。 倒排索引传统数据库为特定列">
+<meta name="description" content="MongoDB 查询文档使用 find() 方法。find() 方法以非结构化的方式来显示所有文档。 语法1db.collection.find(query,projection)  query: 可选，使用查询操作符制定查询条件 projection: 可选,使用投影操作符指定返回的键。返回所有就直接省略该参数即可。   pretty() 方法以格式化的方式来显示所有文档。1db.col.fin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="elasticSearch">
-<meta property="og:url" content="http://yoursite.com/2018/06/23/elasticSearch/index.html">
+<meta property="og:title" content="monogDB查询">
+<meta property="og:url" content="http://yoursite.com/2018/06/23/monogDB查询/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.1 在ES中索引包含两层意思：索引（名词）如上文所述，一个索引(index)就像是传统关系数据库中的数据库，它是相关文档存储的地方，index的复数是indices 或indexes。 索引（动词）「索引一个文档」表示把一个文档存储到索引（名词）里，以便它可以被检索或者查询。这很像SQL中的 INSERT  关键字，差别是，如果文档已经存在，新的文档将覆盖旧的文档。 倒排索引传统数据库为特定列">
-<meta property="og:updated_time" content="2018-06-23T11:47:59.882Z">
+<meta property="og:description" content="MongoDB 查询文档使用 find() 方法。find() 方法以非结构化的方式来显示所有文档。 语法1db.collection.find(query,projection)  query: 可选，使用查询操作符制定查询条件 projection: 可选,使用投影操作符指定返回的键。返回所有就直接省略该参数即可。   pretty() 方法以格式化的方式来显示所有文档。1db.col.fin">
+<meta property="og:updated_time" content="2018-06-23T14:22:25.955Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="elasticSearch">
-<meta name="twitter:description" content="1.1 在ES中索引包含两层意思：索引（名词）如上文所述，一个索引(index)就像是传统关系数据库中的数据库，它是相关文档存储的地方，index的复数是indices 或indexes。 索引（动词）「索引一个文档」表示把一个文档存储到索引（名词）里，以便它可以被检索或者查询。这很像SQL中的 INSERT  关键字，差别是，如果文档已经存在，新的文档将覆盖旧的文档。 倒排索引传统数据库为特定列">
+<meta name="twitter:title" content="monogDB查询">
+<meta name="twitter:description" content="MongoDB 查询文档使用 find() 方法。find() 方法以非结构化的方式来显示所有文档。 语法1db.collection.find(query,projection)  query: 可选，使用查询操作符制定查询条件 projection: 可选,使用投影操作符指定返回的键。返回所有就直接省略该参数即可。   pretty() 方法以格式化的方式来显示所有文档。1db.col.fin">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/23/elasticSearch/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/23/monogDB查询/"/>
 
 
 
 
 
-  <title>elasticSearch | Hexo</title>
+  <title>monogDB查询 | Hexo</title>
   
 
 
@@ -283,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/23/elasticSearch/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/23/monogDB查询/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -300,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">elasticSearch</h1>
+          <h1 class="post-title" itemprop="name headline">monogDB查询</h1>
         
 
         <div class="post-meta">
@@ -312,7 +314,7 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-23T19:29:28+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-23T22:22:03+08:00">
                 2018-06-23
               </time>
             
@@ -350,12 +352,63 @@
       
 
       
-        <h2 id="1-1-在ES中索引包含两层意思："><a href="#1-1-在ES中索引包含两层意思：" class="headerlink" title="1.1 在ES中索引包含两层意思："></a>1.1 在ES中索引包含两层意思：</h2><h5 id="索引（名词）"><a href="#索引（名词）" class="headerlink" title="索引（名词）"></a>索引（名词）</h5><p>如上文所述，一个索引(index)就像是传统关系数据库中的数据库，它是相关文档存储的地方，index的复数<br>是indices 或indexes。</p>
-<h5 id="索引（动词）"><a href="#索引（动词）" class="headerlink" title="索引（动词）"></a>索引（动词）</h5><p>「索引一个文档」表示把一个文档存储到索引（名词）里，以便它可以被检索或者查询。这很像SQL中<br>的 INSERT  关键字，差别是，如果文档已经存在，新的文档将覆盖旧的文档。</p>
-<h4 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h4><p>传统数据库为特定列增加一个索引，例如B-Tree索引来加速检索。Elasticsearch和Lucene使用一种叫做倒排索引<br>(inverted index)的数据结构来达到相同目的</p>
-<h2 id="1-2-下面是常用的将ES一些概念和数据库进行对比图："><a href="#1-2-下面是常用的将ES一些概念和数据库进行对比图：" class="headerlink" title="1.2 下面是常用的将ES一些概念和数据库进行对比图："></a>1.2 下面是常用的将ES一些概念和数据库进行对比图：</h2><p>Relational DB -&gt; Databases -&gt; Tables -&gt; Rows -&gt; Columns</p>
-<p>Elasticsearch -&gt; Indices -&gt; Types -&gt; Documents -&gt; Fields</p>
-<p>1.3 ES中可以有多个索引（index）（数据库），每个索引可以包含多个类型(type)（表），每个类型可以包含多个文档（document）行，然后每个文档可以包含多个字段（Field）（列）</p>
+        <p>MongoDB 查询文档使用 find() 方法。<br>find() 方法以非结构化的方式来显示所有文档。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.find(query,projection)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>query:</strong> 可选，使用查询操作符制定查询条件</li>
+<li><strong>projection:</strong> 可选,使用投影操作符指定返回的键。返回所有就直接省略该参数即可。</li>
+</ul>
+<hr>
+<p>pretty() 方法以格式化的方式来显示所有文档。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.col.find().pretty()</span><br></pre></td></tr></table></figure></p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt; db.col.find().pretty()</span><br><span class="line">&#123;</span><br><span class="line">        &quot;_id&quot; : ObjectId(&quot;56063f17ade2f21f36b03133&quot;),</span><br><span class="line">        &quot;title&quot; : &quot;MongoDB 教程&quot;,</span><br><span class="line">        &quot;description&quot; : &quot;MongoDB 是一个 Nosql 数据库&quot;,</span><br><span class="line">        &quot;by&quot; : &quot;菜鸟教程&quot;,</span><br><span class="line">        &quot;url&quot; : &quot;http://www.runoob.com&quot;,</span><br><span class="line">        &quot;tags&quot; : [</span><br><span class="line">                &quot;mongodb&quot;,</span><br><span class="line">                &quot;database&quot;,</span><br><span class="line">                &quot;NoSQL&quot;</span><br><span class="line">        ],</span><br><span class="line">        &quot;likes&quot; : 100</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="MongoDB-与-RDBMS-Where-语句比较"><a href="#MongoDB-与-RDBMS-Where-语句比较" class="headerlink" title="MongoDB 与 RDBMS Where 语句比较"></a>MongoDB 与 RDBMS Where 语句比较</h3><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>格式</th>
+<th>范例</th>
+<th>RDBMS中的类似语句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>等于</td>
+<td>{<key>:<value>}</value></key></td>
+<td>db.col.find({“by”:”教程”}).pretty()</td>
+<td>where by = ‘教程’ </td>
+</tr>
+<tr>
+<td>少于</td>
+<td>{<key>:{$lt:<value>}}</value></key></td>
+<td>db.col.find({“likes”:{$lt:50}}).pretty()</td>
+<td>where lickes &lt;50 </td>
+</tr>
+<tr>
+<td>小于或者等于</td>
+<td>{<key>:{$lte:50}}.pretty()</key></td>
+<td>db.col.find({“likes”:{$lte:50}}).pretty()</td>
+<td>where lickes &lt;=50 </td>
+</tr>
+<tr>
+<td></td>
+<td>大于</td>
+<td>{<key>:{$gt:50}}</key></td>
+<td>{likes:{$gt:50}}</td>
+<td>where lickes &gt;50 </td>
+</tr>
+<tr>
+<td>不等于</td>
+<td>{<key>:{$ne:<value>}}</value></key></td>
+<td>{likes:{$ne:50}}</td>
+<td>where likes != 50</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="AND条件"><a href="#AND条件" class="headerlink" title="AND条件"></a>AND条件</h3><p>MongoDB 的 find()方法可以传入多个键(key)，每个键(key)以逗号隔开，即常规 SQL 的 AND 条件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.col.find(&#123;key1:value1,key2:value2&#125;).pretty()</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="or条件"><a href="#or条件" class="headerlink" title="or条件"></a>or条件</h3><p>MongoDB OR 条件语句使用了关键字 $or,语法格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db.col.find(</span><br><span class="line">    &#123;</span><br><span class="line">        $or:[</span><br><span class="line">            &#123;key1:value1&#125;,&#123;key2:value2&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -380,15 +433,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/06/23/elasticSearch/" rel="next" title="elasticSearch">
+                <i class="fa fa-chevron-left"></i> elasticSearch
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/23/monogDB查询/" rel="prev" title="monogDB查询">
-                monogDB查询 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -513,7 +566,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-在ES中索引包含两层意思："><span class="nav-number">1.</span> <span class="nav-text">1.1 在ES中索引包含两层意思：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#索引（名词）"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">索引（名词）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#索引（动词）"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">索引（动词）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#倒排索引"><span class="nav-number">1.0.1.</span> <span class="nav-text">倒排索引</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-下面是常用的将ES一些概念和数据库进行对比图："><span class="nav-number">2.</span> <span class="nav-text">1.2 下面是常用的将ES一些概念和数据库进行对比图：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB-与-RDBMS-Where-语句比较"><span class="nav-number">3.</span> <span class="nav-text">MongoDB 与 RDBMS Where 语句比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AND条件"><span class="nav-number">4.</span> <span class="nav-text">AND条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#or条件"><span class="nav-number">5.</span> <span class="nav-text">or条件</span></a></li></ol></div>
             
 
           </div>

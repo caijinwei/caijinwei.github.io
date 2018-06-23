@@ -280,6 +280,182 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/23/monogDB查询/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/caijinweiperson.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/23/monogDB查询/" itemprop="url">monogDB查询</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-23T22:22:03+08:00">
+                2018-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>MongoDB 查询文档使用 find() 方法。<br>find() 方法以非结构化的方式来显示所有文档。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection.find(query,projection)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>query:</strong> 可选，使用查询操作符制定查询条件</li>
+<li><strong>projection:</strong> 可选,使用投影操作符指定返回的键。返回所有就直接省略该参数即可。</li>
+</ul>
+<hr>
+<p>pretty() 方法以格式化的方式来显示所有文档。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.col.find().pretty()</span><br></pre></td></tr></table></figure></p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt; db.col.find().pretty()</span><br><span class="line">&#123;</span><br><span class="line">        &quot;_id&quot; : ObjectId(&quot;56063f17ade2f21f36b03133&quot;),</span><br><span class="line">        &quot;title&quot; : &quot;MongoDB 教程&quot;,</span><br><span class="line">        &quot;description&quot; : &quot;MongoDB 是一个 Nosql 数据库&quot;,</span><br><span class="line">        &quot;by&quot; : &quot;菜鸟教程&quot;,</span><br><span class="line">        &quot;url&quot; : &quot;http://www.runoob.com&quot;,</span><br><span class="line">        &quot;tags&quot; : [</span><br><span class="line">                &quot;mongodb&quot;,</span><br><span class="line">                &quot;database&quot;,</span><br><span class="line">                &quot;NoSQL&quot;</span><br><span class="line">        ],</span><br><span class="line">        &quot;likes&quot; : 100</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="MongoDB-与-RDBMS-Where-语句比较"><a href="#MongoDB-与-RDBMS-Where-语句比较" class="headerlink" title="MongoDB 与 RDBMS Where 语句比较"></a>MongoDB 与 RDBMS Where 语句比较</h3><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>格式</th>
+<th>范例</th>
+<th>RDBMS中的类似语句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>等于</td>
+<td>{<key>:<value>}</value></key></td>
+<td>db.col.find({“by”:”教程”}).pretty()</td>
+<td>where by = ‘教程’ </td>
+</tr>
+<tr>
+<td>少于</td>
+<td>{<key>:{$lt:<value>}}</value></key></td>
+<td>db.col.find({“likes”:{$lt:50}}).pretty()</td>
+<td>where lickes &lt;50 </td>
+</tr>
+<tr>
+<td>小于或者等于</td>
+<td>{<key>:{$lte:50}}.pretty()</key></td>
+<td>db.col.find({“likes”:{$lte:50}}).pretty()</td>
+<td>where lickes &lt;=50 </td>
+</tr>
+<tr>
+<td></td>
+<td>大于</td>
+<td>{<key>:{$gt:50}}</key></td>
+<td>{likes:{$gt:50}}</td>
+<td>where lickes &gt;50 </td>
+</tr>
+<tr>
+<td>不等于</td>
+<td>{<key>:{$ne:<value>}}</value></key></td>
+<td>{likes:{$ne:50}}</td>
+<td>where likes != 50</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="AND条件"><a href="#AND条件" class="headerlink" title="AND条件"></a>AND条件</h3><p>MongoDB 的 find()方法可以传入多个键(key)，每个键(key)以逗号隔开，即常规 SQL 的 AND 条件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.col.find(&#123;key1:value1,key2:value2&#125;).pretty()</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="or条件"><a href="#or条件" class="headerlink" title="or条件"></a>or条件</h3><p>MongoDB OR 条件语句使用了关键字 $or,语法格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db.col.find(</span><br><span class="line">    &#123;</span><br><span class="line">        $or:[</span><br><span class="line">            &#123;key1:value1&#125;,&#123;key2:value2&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/23/elasticSearch/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -442,7 +618,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
